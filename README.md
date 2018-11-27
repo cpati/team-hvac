@@ -1,7 +1,7 @@
 ### team-hvac
 
 #### Alternus Vera
-Dataset: Politifact/Liar-Liar dataset []!(https://www.politifact.com)
+Dataset: Politifact/Liar-Liar dataset (https://www.politifact.com)
 
 Description of the train TSV file format:
 Column 1: the ID of the statement ([ID].json)
