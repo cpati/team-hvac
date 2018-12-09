@@ -1,6 +1,8 @@
 
 # coding: utf-8
 
+# ## Spell Check Factor
+
 # In[ ]:
 
 
@@ -11,6 +13,11 @@ nltk.download('punkt')
 nltk.download('wordnet')
 stop_words=set(stopwords.words('english'))
 
+
+# ## Spelling Error Check Factor
+# ### using nltk wordnet and enchant
+# function spell_check_article - It takes an article as input and returns number of words with spelling error in an article and % of words with errors
+# - pip install pyenchant
 
 # In[ ]:
 
