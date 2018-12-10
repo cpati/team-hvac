@@ -26,10 +26,12 @@ UCI_Aggregator = UCI_Aggregator_load.dropna(how='any')
 
 # #### Fakeness impact based on the claim stance
 
-# * agree = 1
-# * disagree = 0
-# * discuss = 0.5
-# * unrealted = 1
+# * agree = 0 (If most of the claims agree with the news, the news is possibly not fake)
+# * disagree = 1 (If most of the claims disagree with the news, the news is possibly fake)
+# * discuss = 0.5 (If there is a lot of discussion happening around, the news may or may not be fake)
+# * unrealted = 1 (If the stances are mostly unrealted, the news will most likely be fake)
+
+# #### Create a doc2vec model for the training dataset
 
 # In[3]:
 
@@ -68,6 +70,8 @@ model.save("doc2vec.model")
 #print("Model Saved")
 
 
+# #### Once the model is trained load it to use it on the testing dataset
+
 # In[5]:
 
 
@@ -80,6 +84,10 @@ model= Doc2Vec.load("doc2vec.model")
 
 dataset_body2['index'] = dataset_body2.index
 
+
+# #### This python fucntion will scrape the fakenewschallenge dataset to get claims for all the news articles present in new aggregator dataset
+
+# #### Once the relevant claims are found a new dataset will be returned which will have just the required details like news article and respective claims
 
 # In[7]:
 
@@ -118,6 +126,8 @@ def get_claims():
     return new_df2
 
 
+# #### Now we will analyse the stances of all the claims from the new dataset
+
 # In[8]:
 
 
@@ -128,11 +138,11 @@ def stance_check():
         if i == 'discuss':
             Stance_check=0.5
         elif i == 'agree':
-            Stance_check=1
+            Stance_check=0
         elif i == 'disagree':
-            Stance_check=0
+            Stance_check=1
         else:
-            Stance_check=0
+            Stance_check=1
     return Stance_check
 stance_check()
 
