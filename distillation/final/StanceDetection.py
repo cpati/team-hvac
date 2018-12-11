@@ -105,17 +105,16 @@ def get_claims():
         new_test_data = word_tokenize(claim1.lower())
         v2 = model.infer_vector(new_test_data)
         similar_documents = model.docvecs.most_similar([v2], topn = 1)
-        #print (similar_documents)
         myarray = np.asarray(similar_documents)
         new_a=myarray.squeeze()
         similarity_score=new_a[1]
         article_id = new_a[0]
         if float(similarity_score) > 0.95:
-            print ("{}".format(count))
-            print ("At index {}, Claim - {}".format(i, claim1))
+            #print ("{}".format(count))
+            #print ("At index {}, Claim - {}".format(i, claim1))
             uci_news = i
-            print("** Similar news articles **")
-            print(dataset_body2.loc[dataset_body2['index'] == int(new_a[0]), 'articleBody'])
+            #print("** Similar news articles **")
+            #print(dataset_body2.loc[dataset_body2['index'] == int(new_a[0]), 'articleBody'])
             fnc_news_body_index = int(new_a[0])
             count+=1
     UCI_Aggregator['TITLE'][uci_news]
@@ -144,7 +143,7 @@ def stance_check():
         else:
             Stance_check=1
     return Stance_check
-stance_check()
+#stance_check()
 
 
 # In[9]:
