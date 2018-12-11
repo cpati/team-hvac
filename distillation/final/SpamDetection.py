@@ -114,5 +114,5 @@ class SpamDetection:
     def __init__(self,news):
         self.news=news
     def predict(self):
-        return spam_checker(self.news)
+        return spam_detection_checker(self.news)
 
