@@ -8,5 +8,5 @@ Before starting please install following if not installed
 
 ## Contributions 
 - Chidananda Pati: PoliticalAffilicationDetector_Complete.ipynb, PoliticalAffilicationDetector.ipynb , SpellChecker.ipynb 
-- Himangini Agrawal:
+- Himangini Agrawal: Stance Detection (with domain ranking), Spam Detection
 - Vidhi Sharma: ![Sentiment Analysis](https://github.com/cpati/team-hvac/blob/master/distillation/SentimentAnalysis:Sensationalism.ipynb) , ![Sensationalism](https://github.com/cpati/team-hvac/blob/master/distillation/final/Sensationalism.ipynb)
