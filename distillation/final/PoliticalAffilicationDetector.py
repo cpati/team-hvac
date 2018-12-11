@@ -21,7 +21,6 @@ columns=['id','label','statement','subject','speaker','speaker_job','state',
         'party_affiliation','barely_true_count','false_Count',
         'half_true_count','mostly_true_count','pants_on_fire_count','venue_speach'];
 df_lair=pd.read_csv('../train.tsv',sep='\t',header=None,names=columns,index_col=False);
-df_lair.head()
 
 
 # In[37]:
@@ -70,7 +69,6 @@ def text_preprocessing(df_base,column):
 
 
 df_train=text_preprocessing(df_lair,'statement')
-df_train.head()
 
 
 # ## Doc2Vec Political Affilication
@@ -121,15 +119,14 @@ for epoch in range(max_epochs):
     # fix the learning rate, no decay
     model.min_alpha = model.alpha
     
-model.save("d2v.model.pa")
-print("Model Saved")   
+model.save("d2v.model.pa")  
 
 
 # In[44]:
 
 
 df_train_statements_d2v=df_train[['statement','label']]
-model= Doc2Vec.load("d2v.model")
+model= Doc2Vec.load("d2v.model.pa")
 texts=[]
 for x in df_train_statements_d2v['statement']:
     texts.append(model.infer_vector(x))
@@ -172,7 +169,7 @@ s = pickle.dumps(logisticRegr_D2V_PA)
 
 
 from sklearn import metrics
-print(metrics.classification_report(y_test,lr_pred_pa))
+#print(metrics.classification_report(y_test,lr_pred_pa))
 
 
 # In[49]:
@@ -201,11 +198,11 @@ class PoliticalAffilicationDetector:
 # In[51]:
 
 
-political_affiliation_checker("Says the Annies List political group supports third-trimester abortions on demand.")
+#political_affiliation_checker("Says the Annies List political group supports third-trimester #abortions on demand.")
 
 
 # In[52]:
 
 
-logisticRegr_D2V_PA.classes_
+#logisticRegr_D2V_PA.classes_
 
