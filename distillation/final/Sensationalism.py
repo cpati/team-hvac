@@ -1,22 +1,18 @@
 
-# coding: utf-8
-
-# In[4]:
-
-
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-
-# In[5]:
-
-
-def Sensationalism(sentence):
+def Sensationalism_score(sentence):
     analyser = SentimentIntensityAnalyzer()
     score = analyser.polarity_scores(sentence)
+    final={}
     negative =score.get('neg')
     positive =score.get('pos')
     compund = score.get('compound')
     neutral =score.get('neu')
+    final['negative'] = negative
+    final['positive'] = positive
+    final['compund'] = compund
+    final ['neutral'] = neutral
     if (neutral == 1):
         value = 0
         
@@ -41,15 +37,19 @@ def Sensationalism(sentence):
             
     else:
         value = abs(compund)
+    final['sensationl_value'] = float('{:,.3f}'.format(value))
+    #return final
     return value
 
 
-# In[6]:
 
+
+#test = Sensationalism('A strong bipartisan majority in the House of Representatives voted to defund Obamacare.')
+#print (test)
 
 class Sensationalism:
     def __init__(self,news):
         self.news=news
     def predict(self):
-        return Sensationalism(self.news)
+        return Sensationalism_score(self.news)
 
