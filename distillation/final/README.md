@@ -1,5 +1,9 @@
 ## Main notebook is FakenessPredictor.ipynb. It contains final equation. It calls other factor notebooks.
 
+Before starting please install following if not installed
+- pip install pyenchant
+- pip install vaderSentiment
+
 ## Contributions 
 - Chidananda Pati: PoliticalAffilicationDetector_Complete.ipynb, PoliticalAffilicationDetector.ipynb , SpellChecker.ipynb 
 - Himangini Agrawal:
