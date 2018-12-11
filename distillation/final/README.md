@@ -1,4 +1,6 @@
-## Main notebook is FakenessPredictor.ipynb. It contains final equation. It calls other factor notebooks.
+
+
+#### Note: Main notebook is FakenessPredictor.ipynb. It contains final equation. It calls other factor notebooks.
 
 Before starting please install following if not installed
 - pip install pyenchant
