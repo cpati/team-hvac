@@ -43,9 +43,9 @@ Fakeness = 0.9 * (Sensationalism) + 0.85 * (Political Affiliation) + 0.65 * (Spa
 
 **Techniques and algorithms used:**
 * Data Enrichment: 
-* SMS Spam Collection Dataset from Kaggle
-* fnc-1 dataset from fakenewschallenge.org
-* Data Augmentation with features like ‘edited_by’, ‘researched_by’ and ‘date’ from www.politifact.com
+  - SMS Spam Collection Dataset from Kaggle
+  - fnc-1 dataset from fakenewschallenge.org
+  - UCI-News-Aggregator from Kaggle
 * Techniques: Topic Modelling, Spam Detection, Stance Detection
 * Algorithms: Bag of Words, TF-IDF, LDA, SVM, Doc2Vec, Cosine Similarity
 
