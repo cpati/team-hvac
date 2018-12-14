@@ -28,5 +28,24 @@ Description of the train TSV file format:
 * Spam Detection: Spam or Ham are untrue articles/texts made viral in order to deceive masses
 * Spelling Error: More spelling errors mean news from unreliable sources
 
-##### Alternus Vera Score:
+#### Alternus Vera Score:
 Fakeness = 0.9 * (Sensationalism) + 0.85 * (Political Affiliation) + 0.65 * (Spam Detection) + 0.75  * (Stance Detection) + 0.8 * (Spelling Error)	
+
+### Individual Contributions 
+ <br>
+ 
+|    Names          | Contributions                 | 
+| ----------------- |:-----------------------------:| 
+| Vidhi Sharma      | Sentiment Analysis, Sensationalism | 
+| Himangini Agrawal | Spam Detection, Stance Detection (Complex feature - distilling with domain ranking)       |  
+| Chidananda Pati   | Spelling Error, Political Affiliation      |   
+
+
+**Techniques and algorithms used:**
+* Data Enrichment: 
+* SMS Spam Collection Dataset from Kaggle
+* fnc-1 dataset from fakenewschallenge.org
+* Data Augmentation with features like ‘edited_by’, ‘researched_by’ and ‘date’ from www.politifact.com
+* Techniques: Topic Modelling, Spam Detection, Stance Detection
+* Algorithms: Bag of Words, TF-IDF, LDA, SVM, Doc2Vec, Cosine Similarity
+
